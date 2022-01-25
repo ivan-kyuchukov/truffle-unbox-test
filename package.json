@@ -1,0 +1,18 @@
+{
+  "devDependencies": {
+    "concurrently": "^7.0.0",
+    "ganache-cli": "^6.12.2"
+  },
+  "scripts": {
+    "ganache": "ganache-cli --networkId 5777 --allowUnlimitedContractSize --gasLimit 6500000 --gasPrice 25000000000 --mnemonic asdfghjkl",
+    "start": "concurrently \"npm run ganache\" \"npm run migrate\"",
+    "migrate": "truffle migrate --reset --compile-all --network development"
+  },
+  "config": {
+    "ganache": {
+      "networkId": 3431,
+      "gasPrice": 25000000000,
+      "gasLimit": 6500000
+    }
+  }
+}
